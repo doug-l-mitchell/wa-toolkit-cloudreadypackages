@@ -7,10 +7,6 @@ The toolkit works in two ways – the toolkit can be used to access Windows Azur
 
 The Windows Azure Toolkit for iOS is made available as an open source product under the Apache License, Version 2.0.  
 
-## Documentation
-
-This repository includes a Doxyfile that describes toolkit storage client library API.
-
 ## Contact
 
 For additional questions or feedback, please contact the [team](mailto:wwegner@microsoft.com).
