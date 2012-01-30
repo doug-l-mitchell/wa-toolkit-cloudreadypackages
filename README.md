@@ -9,6 +9,20 @@ Each package contains a getting started on how to configure and upload your pack
 
 The Windows Azure Toolkit for iOS is made available as an open source product under the Apache License, Version 2.0.  
 
+## Generating the Certificate on your Mac
+
+You will need to create a certificate to support SSL or get one from a trusted authority. If you are going to create one yourself, you can by doing the following:
+
+* open a terminal window
+* enter the command: **openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout iOSWAToolkit.pem -out iOSWAToolkit.pem**
+	* iOSWAToolkit is the name of the file you want and can be anything you like.
+	* This will create a certificate that you can use to create the PKCS12 certificate. This command will ask for all the information for your cert that you enter.
+* enter the command: **openssl pkcs12 -export -out iOSWAToolkit.pfx -in iOSWAToolkit.pem -name "iOSWAToolkit"**
+	* iOSWAToolkit is the name of the file you want and can be anything you like.
+	* This will ask you for a password that you need to remember so you can enter it when uploading to Windows Azure.
+* enter the command: **openssl x509 -outform der -in iOSWAToolkit.pem -out iOSWAToolkit.cer**
+	* This will export a certificate with the public key which is what you will need for the service config file.
+
 ## Contact
 
 For additional questions or feedback, please contact the [team](mailto:wwegner@microsoft.com).
